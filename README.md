@@ -3,6 +3,7 @@
 An end-to-end data warehouse built in SQL Server using the **Medallion Architecture** (Bronze → Silver → Gold), integrating CRM and ERP source systems into a clean, analytics-ready star schema — plus a full analytics layer that turns the warehouse into actual business insights.
 
 ## Architecture
+See the full interactive diagram: [docs/data_architecture.md](docs/data_architecture.md)
 
 ## Tech Stack
 - **Database:** Microsoft SQL Server (Express)
