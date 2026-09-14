@@ -1,0 +1,3 @@
+SQL Server 2019+ (Express edition is sufficient)
+VS Code with the "SQL Server (mssql)" extension
+Git
