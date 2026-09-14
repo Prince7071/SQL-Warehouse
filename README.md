@@ -2,6 +2,8 @@
 
 An end-to-end data warehouse built in SQL Server using the **Medallion Architecture** (Bronze → Silver → Gold), integrating CRM and ERP source systems into a clean, analytics-ready star schema — plus a full analytics layer that turns the warehouse into actual business insights.
 
+📊 **[Read the key insights derived from this warehouse →](INSIGHTS.md)**
+
 ## Architecture
 See the full interactive diagram: [docs/data_architecture.md](docs/data_architecture.md)
 
@@ -34,6 +36,7 @@ See the full interactive diagram: [docs/data_architecture.md](docs/data_architec
 - Consolidated 27,659 orders totaling $29,356,250 in sales, across 6 source tables from CRM and ERP systems
 - Modeled data for 18,484 customers and 295 products into 3 analytics-ready gold datasets (dim_customers, dim_products, fact_sales)
 - 60,423 units sold at an average price of $486, segmented into VIP/Regular/New customer tiers and High/Mid/Low-performing products via the report views
+- See [INSIGHTS.md](INSIGHTS.md) for the full analysis: revenue concentration, order volume vs. average order value trends, customer segmentation, and a data-completeness caveat on 2014
 
 ## License
 MIT
