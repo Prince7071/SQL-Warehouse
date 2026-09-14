@@ -32,6 +32,9 @@ See the full interactive diagram: [docs/data_architecture.md](docs/data_architec
 4. Run `scripts/gold/ddl_gold.sql`, then `scripts/gold/report_customers.sql` and `report_products.sql`
 5. Explore results using the scripts in `analytics/`
 
+## Dashboard
+![Power BI Dashboard](docs/dashboard.png)
+
 ## Key Results
 - Consolidated 27,659 orders totaling $29,356,250 in sales, across 6 source tables from CRM and ERP systems
 - Modeled data for 18,484 customers and 295 products into 3 analytics-ready gold datasets (dim_customers, dim_products, fact_sales)
