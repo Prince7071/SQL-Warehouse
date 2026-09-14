@@ -26,7 +26,7 @@ reporting and informed decision-making.
 | `prd_info.csv` | `prd_cost` blank on some rows | Defaulted to `0` so revenue math never nulls out |
 | `prd_info.csv` | `prd_key` is a composite of category id + product key | Split: chars 1-5 become `cat_id`, chars 7+ become `prd_key` |
 | `prd_info.csv` | `prd_end_dt` unreliable | Recalculated as the day before the next start date for the same product, via `LEAD()` |
-| `sales_details.csv` | Order/ship/due dates stored as integers (e.g. `20101229`) | Converted to `DATE`; invalid values (0 or wrong length) become `NULL` — **[X] rows affected, see verification below** |
+| `sales_details.csv` | Order/ship/due dates stored as integers (e.g. `20101229`) | Converted to `DATE`; invalid values (0 or wrong length) become `NULL` — verified 19 rows affected (`sls_order_dt`), revenue retained since only the date is nulled, not the row |
 | `sales_details.csv` | `sales_amount <> quantity * price` on some rows; invalid prices | Recomputed from the identity, using `ABS(price)` |
 | `CUST_AZ12.csv` | `cid` carries a `NAS` prefix absent from CRM's key | Prefix stripped so the key joins |
 | `CUST_AZ12.csv` | Some birthdates in the future | Set to `NULL` |

@@ -42,3 +42,31 @@ UNION ALL
 SELECT 'Total Products', COUNT(*) FROM gold.dim_products
 UNION ALL
 SELECT 'Total Customers', COUNT(*) FROM gold.dim_customers;
+
+
+
+
+SELECT 'Total Sales' AS measure_name, SUM(sales_amount) AS measure_value FROM gold.fact_sales
+UNION ALL
+SELECT 'Total Quantity', SUM(quantity) FROM gold.fact_sales
+UNION ALL
+SELECT 'Average Price', AVG(price) FROM gold.fact_sales
+UNION ALL
+SELECT 'Total Orders', COUNT(DISTINCT order_number) FROM gold.fact_sales
+UNION ALL
+SELECT 'Total Products', COUNT(*) FROM gold.dim_products
+UNION ALL
+SELECT 'Total Customers', COUNT(*) FROM gold.dim_customers;
+
+
+USE DataWarehouse;
+GO
+
+SELECT DISTINCT p.prd_nm, p.cat_id
+FROM silver.crm_prd_info p
+LEFT JOIN silver.erp_px_cat_g1v2 c ON p.cat_id = c.id
+WHERE c.id IS NULL;
+
+SELECT COUNT(*) AS invalid_dates
+FROM bronze.crm_sales_details
+WHERE sls_order_dt = 0 OR LEN(sls_order_dt) <> 8;
